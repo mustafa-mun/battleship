@@ -1,5 +1,7 @@
 const ship = (length) => {
   let numberOfHits = 0;
+  const successfulAttacks = [];
+
   const hit = () => {
     numberOfHits += 1;
   };
@@ -14,6 +16,7 @@ const ship = (length) => {
   };
   return {
     length,
+    successfulAttacks,
     hit,
     get numberOfHits() {
       return numberOfHits;
