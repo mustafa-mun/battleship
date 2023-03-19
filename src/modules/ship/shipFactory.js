@@ -1,4 +1,4 @@
-const ship = (length) => {
+const Ship = (length) => {
   let numberOfHits = 0;
   const successfulAttacks = [];
 
@@ -25,4 +25,4 @@ const ship = (length) => {
   };
 };
 
-export default ship;
+export default Ship;

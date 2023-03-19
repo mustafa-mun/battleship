@@ -1,7 +1,7 @@
 import ship from "../ship/shipFactory";
-import gameBoard from "./gameBoard";
+import GameBoard from "./gameBoard";
 
-const board = gameBoard();
+const board = GameBoard();
 
 test("gameBoard is able to place ships", () => {
   expect(board.placeShip(4, 4, ship(3)).x).toBe(4);
@@ -30,7 +30,7 @@ test("gameboard records missed shots", () => {
 });
 
 test("gameboard should report if every ship is sunk", () => {
-  const newBoard = gameBoard();
+  const newBoard = GameBoard();
   newBoard.placeShip(3, 3, ship(2));
   newBoard.placeShip(2, 2, ship(2));
 
