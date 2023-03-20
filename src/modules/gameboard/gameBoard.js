@@ -4,8 +4,17 @@ const GameBoard = () => {
 
   const placeShip = (x, y, callBack) => {
     const ship = callBack;
-    ship.x = x;
-    ship.y = y;
+    if(ship.length + x > 10) {
+      ship.x = (x - ship.length) + 1  
+    } else {
+      ship.x = x;
+    }
+
+    if(ship.height + y > 10) {
+      ship.y = (y - ship.height) + 1
+    } else {
+      ship.y = y;
+    }
     shipsArray.push(ship);
     return ship;
   };
