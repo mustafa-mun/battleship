@@ -6,29 +6,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <script src="https://kit.fontawesome.com/9864d609d0.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/9864d609d0.js"
+      crossorigin="anonymous"
+    ></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Text:wght@700&display=swap"
       rel="stylesheet"
     />
     <link rel="icon" type="image/x-icon" href="images.png" />
-    <title>BATTLESHIP</title>
+    <title>BattleShip</title>
   </head>
   <body>
     <h1>BATTLESHIP</h1>
+   
 
-    
     <main>
+      <div id="place-section">
+        <div>
+          <div>
+            <p>3x</p>
+            <div id="oneSquareFleet" draggable="true">
+              <span class="place-sqaure"></span>
+            </div>
+            <img src="assets/undo.png" alt="">
+          </div>
+          <div>
+            <p>3x</p>
+            <div id="twoSquareFleet" draggable="true">
+              <span class="place-sqaure"></span>
+              <span class="place-sqaure"></span>
+            </div>
+            <img src="assets/undo.png" alt="">
+          </div>
+          <div>
+            <p>2x</p>
+            <div id="threeSquareFleet" draggable="true">
+              <span class="place-sqaure"></span>
+              <span class="place-sqaure"></span>
+              <span class="place-sqaure"></span>
+            </div>
+            <img src="assets/undo.png" alt="">
+          </div>
+          <div>
+            <p>1x</p>
+            <div id="fourSquareFleet" draggable="true">
+              <span class="place-sqaure"></span>
+              <span class="place-sqaure"></span>
+              <span class="place-sqaure"></span>
+              <span class="place-sqaure"></span>
+            </div>
+            <img src="assets/undo.png" alt="">
+          </div>
+        </div>    
+      </div>
       <audio id="battle-theme">
-        <source src="assets/battleThemeA.mp3" type="audio/mp3">
+        <source src="assets/battleThemeA.mp3" type="audio/mp3" />
       </audio>
       <audio id="cannon-hit">
-        <source src="assets/cannon_fire.ogg" type="audio/ogg">
+        <source src="assets/cannon_fire.ogg" type="audio/ogg" />
       </audio>
     </main>
 
     <footer>
-      <p>Copyright 	&#169; 2023 mustafa-mun 
+      <p>
+        Copyright &#169; 2023 mustafa-mun
         <a href="https://github.com/mustafa-mun" target="_blank">
           <i class="fab fa-github"></i>
         </a>
