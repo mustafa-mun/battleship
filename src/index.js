@@ -1,31 +1,36 @@
 import "./style.scss";
 import createGameBoards from "./modules/dom/create-board/createBoard";
 import GameBoard from "./modules/gameboard/gameBoard";
-import Ship from "./modules/ship/shipFactory"
-// import * as PlayerController from "./modules/player/player";
+import Ship from "./modules/ship/shipFactory";
+import reflectShips from "./modules/dom/ships-dom/reflectShips";
+import reflectShipDamage from "./modules/dom/ships-dom/shipDamage";
+import * as PlayerController from "./modules/player/player";
+
+let gameOver = true;
 
 createGameBoards();
 
-// const aiBoardEL = document.getElementById("ai-gameBoard");
-// const playerBoardEl = document.getElementById("player-gameboard");
-
 const playerBoard = GameBoard();
-// const aiBoard = GameBoard()
+const aiBoard = GameBoard();
 
-// // const player = PlayerController.Player();
-// const ai = PlayerController.AIplayer();
-playerBoard.placeShip(1,1,Ship(3))
-playerBoard.placeShip(3,3, Ship(4))
+if (playerBoard.isEveryShipSunk() || aiBoard.isEveryShipSunk()) {
+  gameOver = true;
+}
 
-playerBoard.shipsArray.forEach(ship => {
-  for(let i = ship.x; i < ship.x + ship.length; i+=1) {
-    const square = document.getElementById(`player-${ship.x}-${i}`)
-  square.style.backgroundColor = "green"
-  }
-})
+if(!gameOver) {
+
+// This will be done with drag and drop or manuel coordinate input
+playerBoard.placeShip(1, 1, Ship(3));
+playerBoard.placeShip(3, 3, Ship(4));
+playerBoard.placeShip(2, 5, Ship(5));
+playerBoard.placeShip(7, 8, Ship(4));
+
+// Reflect ships to dom
+reflectShips(playerBoard.shipsArray);
 // // Random ai move to player gameBoard
-// const randomAIMove = ai.randomMove()
-// gameBoard.receiveAttack(randomAIMove[0], randomAIMove[1])
-// const randomMove = document.getElementById(`${JSON.stringify(randomAIMove)},player`)
-// randomMove.style.backgroundColor = "green"
-  
+const ai = PlayerController.AIplayer();
+const randomAIMove = ai.randomMove();
+playerBoard.receiveAttack(randomAIMove[0], randomAIMove[1]);
+// Reflect ship damage to dom
+reflectShipDamage(playerBoard.shipsArray);
+}
