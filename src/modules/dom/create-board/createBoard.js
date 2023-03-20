@@ -3,6 +3,7 @@ function createGrid(parent, tag) {
     for (let j = 10; j > 0; j -= 1) {
       const div = document.createElement("div");
       div.id = `${tag}-${j}-${i}`;
+      div.className = `${tag}-square`
       parent.appendChild(div);
     }
   }
