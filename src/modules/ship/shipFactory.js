@@ -1,4 +1,4 @@
-const Ship = (length) => {
+const Ship = (length, height) => {
   let numberOfHits = 0;
   const successfulAttacks = [];
 
@@ -7,7 +7,7 @@ const Ship = (length) => {
   };
   let sunk = false;
   const isSunk = () => {
-    if (length === numberOfHits) {
+    if (length === numberOfHits || height === numberOfHits) {
       sunk = true;
     } else {
       sunk = false;
@@ -16,6 +16,7 @@ const Ship = (length) => {
   };
   return {
     length,
+    height,
     successfulAttacks,
     hit,
     get numberOfHits() {
