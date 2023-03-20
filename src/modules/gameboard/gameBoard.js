@@ -12,7 +12,11 @@ const GameBoard = () => {
 
   const receiveAttack = (x, y) => {
     const ship = shipsArray.find(
-      (item) => x >= item.x && x < item.x + item.length && item.y === y
+      (item) =>
+        x >= item.x &&
+        x < item.x + item.length &&
+        y >= item.y &&
+        y < item.y + item.height
     );
     if (!ship) {
       missedShots.push([x, y]);
@@ -32,7 +36,7 @@ const GameBoard = () => {
   };
 
   const isEveryShipSunk = () => {
-    if(!shipsArray.length) return false
+    if (!shipsArray.length) return false;
     if (shipsArray.every((item) => item.isSunk())) return true;
     return false;
   };
