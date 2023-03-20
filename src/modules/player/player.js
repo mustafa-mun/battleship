@@ -17,8 +17,8 @@ export const AIplayer = () => {
   const previousMoves = [];
 
   const randomMove = () => {
-    const x = Math.floor(Math.random() * 11);
-    const y = Math.floor(Math.random() * 11);
+    const x = Math.floor(Math.random() * 10) + 1;
+    const y = Math.floor(Math.random() * 10) + 1;
     previousMoves.push([x, y]);
     return [x, y];
   };
