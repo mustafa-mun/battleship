@@ -32,6 +32,7 @@ const GameBoard = () => {
   };
 
   const isEveryShipSunk = () => {
+    if(!shipsArray.length) return false
     if (shipsArray.every((item) => item.isSunk())) return true;
     return false;
   };
