@@ -1,9 +1,17 @@
 {
   "parser": "@babel/eslint-parser",
-  "extends": ["airbnb", "prettier", "eslint:recommended", "plugin:jest/recommended"],
+  "extends": [
+    "airbnb",
+    "prettier",
+    "eslint:recommended",
+    "plugin:jest/recommended"
+  ],
   "plugins": ["jest"],
   "globals": {
     "jest": true,
     "document": true
+  },
+  "rules": {
+    "no-console": "off"
   }
 }
